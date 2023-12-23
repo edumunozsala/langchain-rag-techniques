@@ -33,7 +33,7 @@ Hybrid or fusion search usually provides better retrieval results as two complem
 
 - langchain-dense-x-retrieval: a notebook with the code from Langchain to build a propositional retrieval designed in the paper: ["Dense X Retrieval: What Retrieval Granularity Should We Use?"](https://arxiv.org/abs/2312.06648) by Tong Chen, Hongwei Wang, Sihao Chen, Wenhao Yu, Kaixin Ma, Xinran Zhao, Hongming Zhang, and Dong Yu from the University of Washington, Tencent AI Lab, University of Pennsylvania, and Carnegie Mellon University. Langchain provides a template in this [link](https://templates.langchain.com/new?integration_name=propositional-retrieval)
 
-- Rerank-Fusion-Ensemble-Hybrid Search: a notebook where we build a simple RAG chain using an Emsemble Retriever, Hybrud Search, and the Reciprocal Rerank Fusion, based on the [paper](https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf). 
+- Rerank-Fusion-Ensemble-Hybrid-Search: a notebook where we build a simple RAG chain using an Emsemble Retriever, Hybrid Search, and the Reciprocal Rerank Fusion, based on the [paper](https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf). 
 
 # License
 
