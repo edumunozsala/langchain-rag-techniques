@@ -1,5 +1,8 @@
 # Retrieval Augmented Generation Techniques in Langchain
  This repository collects multiple notebooks and .py files with techniques and solutions to RAG problems. Some simple solutions to more advanced ones to approach the retrieval, augmentation and generation of answers or information about data/documents provided. 
+ 
+#### This repository is still in progress.
+
 
  ### Dense X Retrieval
 
@@ -27,13 +30,17 @@ The retrieved documents will be reranked according to the `Reciprocal Rerank Fus
 
 Hybrid or fusion search usually provides better retrieval results as two complementary search algorithms are combined, taking into account both semantic similarity and keyword matching between the query and the stored documents.
 
-#### This repository is still in progress.
+## Multiquery Retrieval
+
+The `MultiQueryRetriever` automates the process of prompt tuning by using an LLM to generate multiple queries from different perspectives for a given user input query. For each query, it retrieves a set of relevant documents and takes the unique union across all queries to get a larger set of potentially relevant documents. By generating multiple perspectives on the same question, the `MultiQueryRetriever` might be able to overcome some of the limitations of the distance-based retrieval and get a richer set of results.
 
 # Content
 
 - langchain-dense-x-retrieval: a notebook with the code from Langchain to build a propositional retrieval designed in the paper: ["Dense X Retrieval: What Retrieval Granularity Should We Use?"](https://arxiv.org/abs/2312.06648) by Tong Chen, Hongwei Wang, Sihao Chen, Wenhao Yu, Kaixin Ma, Xinran Zhao, Hongming Zhang, and Dong Yu from the University of Washington, Tencent AI Lab, University of Pennsylvania, and Carnegie Mellon University. Langchain provides a template in this [link](https://templates.langchain.com/new?integration_name=propositional-retrieval)
 
 - Rerank-Fusion-Ensemble-Hybrid-Search: a notebook where we build a simple RAG chain using an Emsemble Retriever, Hybrid Search, and the Reciprocal Rerank Fusion, based on the [paper](https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf). 
+
+- Multiquery-retrieval: in this notebook we show you how to use a multiquery retriever in a RAG chain.
 
 # License
 
