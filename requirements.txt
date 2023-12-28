@@ -1,7 +1,11 @@
 langchain==0.0.350
 chromadb==0.4.20 
 openai==1.5.0 
+faiss-cpu==1.7.4
+pypdf==3.17.3
+rank_bm25==0.2.2
 unstructured
+pinecone-client==2.2.4
 tiktoken
 selenium 
 newspaper3k 

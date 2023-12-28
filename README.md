@@ -34,6 +34,18 @@ Hybrid or fusion search usually provides better retrieval results as two complem
 
 The `MultiQueryRetriever` automates the process of prompt tuning by using an LLM to generate multiple queries from different perspectives for a given user input query. For each query, it retrieves a set of relevant documents and takes the unique union across all queries to get a larger set of potentially relevant documents. By generating multiple perspectives on the same question, the `MultiQueryRetriever` might be able to overcome some of the limitations of the distance-based retrieval and get a richer set of results.
 
+## Per User Retrieval
+
+When building a retrieval app, you often have to build it with multiple users in mind. This means that you may be storing data not just for one user, but for many different users, and they should not be able to see eachother’s data. This means that you need to be able to configure your retrieval chain to only retrieve certain information.
+
+This generally involves two steps.
+
+- Step 1: Make sure the retriever you are using supports multiple users, for example, each vectorstore and retriever may have their own mechanism, and may be called different things (namespaces, multi-tenancy, etc). For vectorstores, this is generally exposed as a keyword argument that is passed in during similarity_search.
+
+- Step 2: Add that parameter as a configurable field for the chain. This will let you easily call the chain and configure any relevant flags at runtime.
+
+- Step 3: Call the chain with that configurable field
+
 # Content
 
 - langchain-dense-x-retrieval: a notebook with the code from Langchain to build a propositional retrieval designed in the paper: ["Dense X Retrieval: What Retrieval Granularity Should We Use?"](https://arxiv.org/abs/2312.06648) by Tong Chen, Hongwei Wang, Sihao Chen, Wenhao Yu, Kaixin Ma, Xinran Zhao, Hongming Zhang, and Dong Yu from the University of Washington, Tencent AI Lab, University of Pennsylvania, and Carnegie Mellon University. Langchain provides a template in this [link](https://templates.langchain.com/new?integration_name=propositional-retrieval)
@@ -41,6 +53,8 @@ The `MultiQueryRetriever` automates the process of prompt tuning by using an LLM
 - Rerank-Fusion-Ensemble-Hybrid-Search: a notebook where we build a simple RAG chain using an Emsemble Retriever, Hybrid Search, and the Reciprocal Rerank Fusion, based on the [paper](https://plg.uwaterloo.ca/~gvcormac/cormacksigir09-rrf.pdf). 
 
 - Multiquery-retrieval: in this notebook we show you how to use a multiquery retriever in a RAG chain.
+
+- Per-user-retrieval: notebook implementing a per user retrieval in a RAG chain.
 
 # License
 
