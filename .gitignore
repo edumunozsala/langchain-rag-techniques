@@ -155,3 +155,6 @@ cython_debug/
 data
 # Output data
 output
+# Data directory
+chroma_db
+chroma_db_filestore

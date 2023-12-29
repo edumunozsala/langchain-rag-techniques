@@ -46,6 +46,21 @@ This generally involves two steps.
 
 - Step 3: Call the chain with that configurable field
 
+## Parent Document Retriever
+
+When splitting documents for retrieval, there are often conflicting desires:
+
+- You may want to have small documents, so that their embeddings can most accurately reflect their meaning. If too long, then the embeddings can lose meaning.
+- You want to have long enough documents that the context of each chunk is retained.
+
+**Context Enrichment**
+
+The concept here is to retrieve smaller chunks for better search quality, but add up surrounding context for LLM to reason upon.
+There are two options — to expand context by sentences around the smaller retrieved chunk or to split documents recursively into a number of larger parent chunks, containing smaller child chunks.
+
+The `ParentDocumentRetriever` strikes that balance by splitting and storing small chunks of data. During retrieval, it first fetches the small chunks but then looks up the parent ids for those chunks and returns those larger documents.
+
+
 # Content
 
 - langchain-dense-x-retrieval: a notebook with the code from Langchain to build a propositional retrieval designed in the paper: ["Dense X Retrieval: What Retrieval Granularity Should We Use?"](https://arxiv.org/abs/2312.06648) by Tong Chen, Hongwei Wang, Sihao Chen, Wenhao Yu, Kaixin Ma, Xinran Zhao, Hongming Zhang, and Dong Yu from the University of Washington, Tencent AI Lab, University of Pennsylvania, and Carnegie Mellon University. Langchain provides a template in this [link](https://templates.langchain.com/new?integration_name=propositional-retrieval)
@@ -55,6 +70,8 @@ This generally involves two steps.
 - Multiquery-retrieval: in this notebook we show you how to use a multiquery retriever in a RAG chain.
 
 - Per-user-retrieval: notebook implementing a per user retrieval in a RAG chain.
+
+- parent-document-retriever: an example notebbok implementing a context enrichment strategy using Parent Document Retriever in Langchain
 
 # License
 
